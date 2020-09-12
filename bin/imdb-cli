@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require '../lib/imdb_cli'
+# require "bundler/setup"
+# require "imdb_cli"
+
+# Dont put any logic over here. We need to put the CLI logic inside a CLI class.
+#puts "Hello World"
+ImdbCli::CLI.new.call
