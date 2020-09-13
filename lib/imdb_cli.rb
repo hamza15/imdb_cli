@@ -1,6 +1,5 @@
-require "imdb_cli/version"
+require 'nokogiri'
+require 'open-uri'
 
-module ImdbCli
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative "imdb_cli/version"
+require_relative "imdb_cli/cli"
