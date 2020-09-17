@@ -23,17 +23,18 @@ class ImdbCli::Scraper
         doc = Nokogiri::HTML(open(@index_url).read)
         #scraped
         scraped_movies = []
-        
+        #binding.pry
         doc.css(".lister-item.mode-detail").each do |movie|
             scraped_movies << {
             name: movie.css(".lister-item-content h3 a")[0].text,
             year: movie.css(".lister-item-year.text-muted.unbold")[0].text.gsub(/[()]/, ""),
-            director: doc.css(".lister-item-content p.text-muted.text-small")[1].text.gsub("\n",'').strip.split("|")[0].strip.split(":")[1],
-            stars:  doc.css(".lister-item-content p.text-muted.text-small")[1].text.gsub("\n",'').strip.split("|")[1].strip.split(":")[1],
-            #description: doc.css(".lister-list .list-description")[0].text
+            director: movie.css(".lister-item-content p.text-muted.text-small")[1].text.gsub("\n",'').strip.split("|")[0].strip.split(":")[1],
+            stars:  movie.css(".lister-item-content p.text-muted.text-small")[1].text.gsub("\n",'').strip.split("|")[1].strip.split(":")[1],
+            review: movie.css(".list-description").text
           }
         end
-        scraped_movies
+        #binding.pry
         #puts "#{scraped_movies}"
+        scraped_movies
     end
 end

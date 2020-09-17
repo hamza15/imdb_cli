@@ -1,12 +1,15 @@
 class ImdbCli::Movie
 
-    attr_accessor :name, :year, :director, :stars
+    attr_accessor :name, :year, :director, :stars, :review
   
     @@all = []
   
     def initialize(movie_hash)
       @name = movie_hash[:name]
       @year = movie_hash[:year]
+      @director = movie_hash[:director]
+      @stars = movie_hash[:stars]
+      @review= movie_hash[:review]
       @@all << self
     end
   
@@ -16,12 +19,12 @@ class ImdbCli::Movie
       end 
     end
   
-    def add_movie_attributes(attributes_hash)
-      attributes_hash.each do |key, value|
-        send("#{key}=", value)
-      end
-      self
-    end
+    # def add_movie_attributes(attributes_hash)
+    #   attributes_hash.each do |key, value|
+    #     send("#{key}=", value)
+    #   end
+    #   self
+    # end
   
     def self.all
       @@all
