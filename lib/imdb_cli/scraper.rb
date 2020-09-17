@@ -13,7 +13,7 @@ class ImdbCli::Scraper
         doc.css(".lister-item.mode-detail").each.with_index(1) do |movie, index|
             name = movie.css(".lister-item-content h3 a")[0].text
             year = movie.css(".lister-item-year.text-muted.unbold")[0].text.gsub(/[()]/, "")
-            puts "#{index}. #{name} - #{year}"
+            puts "#{index}. #{name} - #{year}".yellow
         end
         #scrape_with_attributes
     end
