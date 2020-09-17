@@ -15,7 +15,7 @@ class ImdbCli::Scraper
             year = movie.css(".lister-item-year.text-muted.unbold")[0].text.gsub(/[()]/, "")
             puts "#{index}. #{name} - #{year}"
         end
-        scrape_with_attributes
+        #scrape_with_attributes
     end
 
     #Stores the hash of movie_attributes as an array of movie hashes.
@@ -33,6 +33,7 @@ class ImdbCli::Scraper
             #description: doc.css(".lister-list .list-description")[0].text
           }
         end
+        scraped_movies
         #puts "#{scraped_movies}"
     end
 end
