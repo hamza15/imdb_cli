@@ -27,7 +27,7 @@ class ImdbCli::CLI
                 exit
             elsif user_input == 'list'
                 call
-            else
+            elsif validation(user_input)
                 puts "\n"
                 puts 'Finding you the best movies on IMDB....'
                 3.times do
@@ -39,6 +39,11 @@ class ImdbCli::CLI
                 puts "Starring - #{movie.stars}.".blue
                 puts "\n"
                 puts "Review - #{movie.review}".blue
+                puts "\n"
+                trailer(movie.url)
+            else
+                puts "--------------------NOT A VALID MOVIE NUMBER--------------------"
+                puts "\n"
             end
         end
     end
@@ -48,4 +53,18 @@ class ImdbCli::CLI
         ImdbCli::Movie.all[value]
     end
 
+    def validation(input)
+        valid_array = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15']
+        valid_array.include?(input)
+    end
+
+    def trailer(url)
+        puts "Would you like to watch the trailer? Enter y/n"
+        input = gets.strip
+        if input == "y"
+            system("open", "#{url}")
+        elsif input == "exit"
+            exit
+        end
+    end
 end

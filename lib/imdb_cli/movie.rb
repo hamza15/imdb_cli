@@ -1,6 +1,6 @@
 class ImdbCli::Movie
 
-    attr_accessor :name, :year, :director, :stars, :review
+    attr_accessor :name, :year, :director, :stars, :review, :url
   
     @@all = []
   
@@ -9,7 +9,8 @@ class ImdbCli::Movie
       @year = movie_hash[:year]
       @director = movie_hash[:director]
       @stars = movie_hash[:stars]
-      @review= movie_hash[:review]
+      @review = movie_hash[:review]
+      @url = "https://www.imdb.com/title/" + movie_hash[:url]
       @@all << self
     end
   

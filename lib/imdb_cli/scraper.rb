@@ -30,7 +30,8 @@ class ImdbCli::Scraper
             year: movie.css(".lister-item-year.text-muted.unbold")[0].text.gsub(/[()]/, ""),
             director: movie.css(".lister-item-content p.text-muted.text-small")[1].text.gsub("\n",'').strip.split("|")[0].strip.split(":")[1],
             stars:  movie.css(".lister-item-content p.text-muted.text-small")[1].text.gsub("\n",'').strip.split("|")[1].strip.split(":")[1],
-            review: movie.css(".list-description").text
+            review: movie.css(".list-description").text,
+            url: movie.css(".lister-item-image.ribbonize a")[0]["href"].split("/")[-1]
           }
         end
         #binding.pry
