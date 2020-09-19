@@ -3,9 +3,5 @@
 require '../lib/imdb_cli'
 # require "bundler/setup"
 # require "imdb_cli"
-
-# Dont put any logic over here. We need to put the CLI logic inside a CLI class.
-#puts "Hello World"
 index_url = "https://www.imdb.com/list/ls062635494/?sort=moviemeter,asc&st_dt=&mode=detail&page=1"
 ImdbCli::CLI.new.call
-#ImdbCli::Scraper.new.scrape_index_page(index_url)
