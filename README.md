@@ -2,7 +2,7 @@
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/imdb_cli`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
+IMDC_CLI uses Nokogiri to scrape the Top 15 Horro movies based on popularity. It allows the user to select a movie to find out more information about it like the cast, director, an IMDB review and even watch the trailer for a movie based on their selection!
 
 ## Installation
 
@@ -22,7 +22,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To start using this project after cloning/installing, enter the bin/ directory of the project's root folder and type:
+
+    $ ./imdb_cli
 
 ## Development
 
@@ -41,4 +43,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the ImdbCli project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/<github username>/imdb_cli/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the ImdbCli project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/hamza15/imdb_cli/blob/master/CODE_OF_CONDUCT.md).
