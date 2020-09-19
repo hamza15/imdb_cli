@@ -2,7 +2,7 @@
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/imdb_cli`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-IMDC_CLI uses Nokogiri to scrape the Top 15 Horro movies based on popularity. It allows the user to select a movie to find out more information about it like the cast, director, an IMDB review and even watch the trailer for a movie based on their selection!
+IMDC_CLI uses Nokogiri to scrape the Top 15 Horror movies based on popularity. It allows the user to select a movie to find out more information about it like the cast, director, an IMDB review and even watch the trailer for a movie based on their selection!
 
 ## Installation
 
